@@ -31,16 +31,6 @@ const [prevsFirstView, prevsGroup] = [
   document.querySelector("[btn-prevs-group]"),
 ];
 
-const calcW6Func = function () {
-  const [camp5, camp6] = [
-    document.querySelector(".is-w5"),
-    document.querySelector(".is-w6"),
-  ];
-  if (window.innerWidth > 1023) {
-    camp6.style.width = window.innerWidth - camp5.offsetWidth - 190 + "px";
-  }
-};
-
 // ===== main =====
 const main = () => {
   // init swiper
@@ -76,7 +66,6 @@ const main = () => {
     },
     on: {
       init: (sw) => {
-        calcW6Func();
         if (sw.realIndex === 0) {
           slideGroupFade.forEach((item) => {
             item.classList.add("--hide");
@@ -88,7 +77,6 @@ const main = () => {
         }
       },
       slideChange: (sw) => {
-        calcW6Func();
         const index_currentSlide = sw.realIndex;
         const currentSlide = sw.slides[index_currentSlide];
 
@@ -144,14 +132,10 @@ const main = () => {
           slideGroupFade.forEach((item) => {
             item.classList.remove("--hide");
           });
-          // prevsFirstView.style.opacity = "1";
-          // prevsFirstView.style.pointerEvents = "auto";
         } else {
           slideGroupFade.forEach((item) => {
             item.classList.add("--hide");
           });
-          // prevsFirstView.style.opacity = "0";
-          // prevsFirstView.style.pointerEvents = "none";
         }
       },
     },
@@ -216,10 +200,4 @@ window.onload = () => {
   document.body.classList.remove("fadeout");
   appHeight();
   main();
-};
-
-window.onresize = () => {
-  setTimeout(() => {
-    calcW6Func();
-  }, 100);
 };

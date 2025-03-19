@@ -343,10 +343,6 @@
         width: 100% !important;
       }
 
-      &.is-w5 {
-        width: auto !important;
-      }
-
       &.ships_slide_firstview {
         z-index: 11;
         overflow: hidden;
@@ -354,11 +350,6 @@
 
       @include maxW(1023px) {
         width: 100%;
-
-        &.is-w5,
-        &.is-w6 {
-          width: 100% !important;
-        }
 
         &.is-fullbg {
           picture {
@@ -401,37 +392,6 @@
           }
         }
       }
-
-      &.is-text6 {
-        .ships_text {
-          position: absolute;
-          top: 430px;
-          transform: translateY(-50%);
-          right: 60px;
-          z-index: 1;
-          max-width: 350px;
-          font-size: 1rem;
-          letter-spacing: 0;
-          width: 76%;
-
-          @include maxW(1615px) {
-            br {
-              display: none;
-            }
-          }
-
-          @include maxW(1023px) {
-            max-width: 200px;
-            left: 30%;
-            right: auto;
-            top: 395px;
-
-            br {
-              display: block;
-            }
-          }
-        }
-      }
     }
 
     &_picture {
@@ -451,45 +411,6 @@
         }
       }
 
-      &.is-camp2 {
-        padding-left: 100px;
-        background-color: #4eb96c;
-      }
-
-      &.is-camp6 {
-        width: 100%;
-        max-width: 270px;
-        justify-content: flex-end;
-        padding-top: 30px;
-        padding-right: 30px;
-        padding-left: 30px;
-        margin-left: auto;
-
-        img {
-          width: auto;
-          object-fit: contain;
-          object-position: top;
-        }
-      }
-
-      &.is-camp7 {
-        padding: 0 50px;
-      }
-
-      &.is-camp10 {
-        width: 36.111vw;
-        justify-content: flex-end;
-        padding-right: 30px;
-        padding-top: 30px;
-        margin-left: auto;
-
-        img {
-          width: auto;
-          object-fit: contain;
-          object-position: top;
-        }
-      }
-
       @include maxW(1023px) {
         height: calc(100% - 69px);
 
@@ -500,43 +421,52 @@
             height: 55.93vh;
           }
         }
-
-        &.is-camp2 {
-          padding-left: 50px;
-        }
-
-        &.is-camp6 {
-          width: fit-content;
-          height: calc(100% - 69px);
-          padding-top: 25px;
-          padding-right: 45px;
-          justify-content: flex-end;
-        }
-
-        &.is-camp7 {
-          padding: 0 25px 0 0;
-        }
-
-        &.is-camp10 {
-          width: fit-content;
-          height: 60.839vh;
-          padding-top: 25px;
-          padding-right: 0;
-        }
       }
     }
 
-    &_img_crop {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
+    &_camp3 {
+      width: 100%;
+      height: 100%;
+      position: relative;
 
-      img {
-        width: auto;
-        height: calc(var(--app-height) - 69px);
-        opacity: 1 !important;
-        object-position: top left;
+      &_wrap {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 57.3% 1fr;
+        gap: 50px;
+        position: absolute;
+        bottom: 86px;
+        padding: 0 54px 0 30px;
+
+        picture {
+          height: 100%;
+          align-items: flex-end;
+
+          img {
+            height: auto;
+            object-position: bottom;
+          }
+        }
+
+        @include maxW(1023px) {
+          gap: 15px;
+          bottom: 69px;
+          padding: 0 24px 0 0;
+          grid-template-columns: calc(57% + 15px) 1fr;
+        }
+      }
+
+      &_txt {
+        padding: 98px 54px 0 30px;
+        font-size: 1.2rem;
+        line-height: 1.3;
+      }
+
+      @include maxW(1023px) {
+        &_txt {
+          padding: 109px 35px 0 36px;
+          font-size: 1rem;
+        }
       }
     }
 
@@ -780,12 +710,6 @@
           justify-content: center;
         }
       }
-    }
-  }
-
-  @include maxW(1023px) {
-    .is-w5 .ships_picture img {
-      object-position: top right;
     }
   }
 
