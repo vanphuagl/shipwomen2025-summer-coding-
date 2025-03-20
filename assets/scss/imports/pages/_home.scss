@@ -372,26 +372,6 @@
       height: 100%;
       position: relative;
       overflow: hidden;
-
-      &.is-text12 {
-        display: grid;
-        grid-template-columns: 1fr 57.6%;
-
-        .ships_text p {
-          writing-mode: tb-rl;
-          padding: 30px;
-          font-size: 1.2rem;
-          line-height: 1.3;
-        }
-
-        @include maxW(1023px) {
-          grid-template-columns: 1fr 57.971%;
-
-          .ships_text p {
-            padding: 25px 25px 25px 55px;
-          }
-        }
-      }
     }
 
     &_picture {
@@ -424,11 +404,13 @@
       }
     }
 
-    &_camp3 {
+    &_camp {
       width: 100%;
       height: 100%;
       position: relative;
+    }
 
+    &_camp3 {
       &_wrap {
         width: 100%;
         display: grid;
@@ -447,13 +429,6 @@
             object-position: bottom;
           }
         }
-
-        @include maxW(1023px) {
-          gap: 15px;
-          bottom: 69px;
-          padding: 0 24px 0 0;
-          grid-template-columns: calc(57% + 15px) 1fr;
-        }
       }
 
       &_txt {
@@ -467,14 +442,17 @@
           padding: 109px 35px 0 36px;
           font-size: 1rem;
         }
+
+        &_wrap {
+          gap: 15px;
+          bottom: 69px;
+          padding: 0 24px 0 0;
+          grid-template-columns: calc(57% + 15px) 1fr;
+        }
       }
     }
 
     &_camp5 {
-      width: 100%;
-      height: 100%;
-      position: relative;
-
       &_blue {
         position: absolute;
         top: 0;
@@ -497,10 +475,6 @@
     }
 
     &_camp6 {
-      width: 100%;
-      height: 100%;
-      position: relative;
-
       &_blue {
         position: absolute;
         top: 0;
@@ -515,22 +489,131 @@
         width: 100%;
         height: 100%;
         display: grid;
-        grid-template-columns: 1fr 58.72%;
-        gap: 150px;
-        
-        picture:first-child {
-          img {
-            object-fit: contain;
-            object-position: left center;
-          }
+        grid-template-columns: 17.28% 58.72%;
+        justify-content: space-between;
+
+        img {
+          object-fit: contain;
+        }
+      }
+    }
+
+    &_camp8 {
+      &_wrap {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 24.64% 52.8%;
+        justify-content: space-between;
+
+        picture {
+          height: 100vh;
         }
 
         picture:nth-child(2) {
           img {
-            object-fit: contain;
-            object-position: right center;
+            width: 100%;
+            height: auto;
           }
         }
+      }
+
+      @include maxW(1023px) {
+        &_wrap {
+          display: block;
+          padding-left: 114px;
+        }
+      }
+    }
+
+    &_camp910 {
+      &_txt {
+        width: 100%;
+        position: absolute;
+        bottom: 175px;
+        padding: 0 30px;
+        z-index: 1;
+
+        p {
+          font-size: 1.2rem;
+          line-height: 1.3;
+        }
+      }
+
+      &_wrap {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        picture {
+          &.pic1 {
+            width: 100%;
+            height: 53.915vh;
+          }
+
+          &.pic2 {
+            width: 100%;
+            height: 145px;
+          }
+        }
+      }
+
+      @include maxW(1023px) {
+        height: calc(100% - 69px);
+
+        &_txt {
+          bottom: 131px;
+          padding: 20px;
+
+          p {
+            font-size: 1rem;
+          }
+        }
+
+        &_wrap {
+          picture {
+            &.pic1 {
+              height: 38.881vh;
+            }
+
+            &.pic2 {
+              height: 96px;
+            }
+          }
+        }
+      }
+    }
+
+    &_camp12 {
+      height: 50.064vh;
+      background-color: #9cd1bf;
+
+      &_wrap {
+        width: auto;
+        height: 100%;
+        margin-left: auto;
+        padding-left: 99px;
+      }
+
+      @include maxW(1023px) {
+        height: 37.483vh;
+
+        &_wrap {
+          padding-left: 52px;
+
+          picture {
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    @include maxW(1023px) {
+      .ships_camp5_blue,
+      .ships_camp6_blue {
+        height: calc(100% - 69px);
       }
     }
 
@@ -618,13 +701,13 @@
 
     &_logo {
       position: absolute;
-      top: 124px;
-      right: 64px;
+      top: 50%;
+      left: 67px;
       z-index: 10;
 
       @include maxW(1023px) {
-        top: 80px;
-        right: 36px;
+        top: calc(50% + 30px);
+        left: 30px;
 
         svg {
           width: 100px;
